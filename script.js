@@ -2,12 +2,50 @@
 const menu = document.getElementById("menu");
 
 if (menu) {
-  Array.from(document.getElementsByClassName("menu-item"))
-    .forEach((item, index) => {
-      item.onmouseover = () => {
-        menu.dataset.activeIndex = index;
-      };
+  const menuItems = Array.from(document.getElementsByClassName("menu-item"));
+  const menuHeader = document.getElementById("menu-header");
+
+  menuItems.forEach((item, index) => {
+    item.onmouseover = () => {
+      menu.dataset.activeIndex = index;
+    };
+
+    item.addEventListener("click", (e) => {
+      e.preventDefault();
+      const href = item.getAttribute("href");
+
+      menu.classList.add("transitioning");
+      menuHeader.classList.add("slide-out");
+
+      // Stagger each item dropping away from the clicked one outward
+      menuItems.forEach((other, i) => {
+        const distance = Math.abs(i - index);
+        const delay = distance * 60;
+        setTimeout(() => other.classList.add("slide-out"), delay);
+      });
+
+      // Navigate after the cascade finishes
+      const totalDelay = (menuItems.length - 1) * 60 + 350;
+      setTimeout(() => { window.location.href = href; }, totalDelay);
     });
+  });
+}
+
+// ===== Inner Pages - Entrance Animation =====
+if (document.body.classList.contains('page-entering')) {
+  // Double rAF ensures browser has painted the dark initial state
+  requestAnimationFrame(() => {
+    requestAnimationFrame(() => {
+      document.body.classList.remove('page-entering');
+      document.body.classList.add('page-entered');
+
+      // Clean up curtain after transition
+      const curtain = document.querySelector('.page-curtain');
+      if (curtain) {
+        curtain.addEventListener('transitionend', () => curtain.remove());
+      }
+    });
+  });
 }
 
 // ===== Inner Pages - Mobile Navigation =====

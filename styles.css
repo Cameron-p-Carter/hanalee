@@ -179,6 +179,103 @@ img {
   color: white;
 }
 
+/* ===== Page Transitions ===== */
+
+/* Home exit: items stagger out from clicked item */
+.menu-item {
+  transition: opacity 400ms ease, transform 400ms ease;
+}
+
+.menu-item.slide-out {
+  opacity: 0;
+  transform: translateX(-40px);
+}
+
+#menu-header {
+  transition: opacity 0.3s ease;
+}
+
+#menu-header.slide-out {
+  opacity: 0;
+}
+
+/* Inner pages: start fully dark, reveal like stage lights */
+.page-entering {
+  background-color: var(--bg-dark) !important;
+}
+
+.page-curtain {
+  position: fixed;
+  inset: 0;
+  background-color: var(--bg-dark);
+  z-index: 998;
+  opacity: 1;
+  transition: opacity 0.6s ease;
+  pointer-events: none;
+}
+
+.page-entered .page-curtain {
+  opacity: 0;
+}
+
+/* Nav starts hidden, slides down */
+.page-entering .nav {
+  opacity: 0;
+  transform: translateY(-100%);
+}
+
+.page-entered .nav {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.4s ease 0.3s, transform 0.4s ease 0.3s;
+}
+
+/* Page header brightens from darkness */
+.page-entering .page-header-bg {
+  filter: brightness(0);
+}
+
+.page-entered .page-header-bg {
+  filter: brightness(0.25);
+  transition: filter 0.8s ease 0.1s;
+}
+
+.page-entering .page-header h1 {
+  opacity: 0;
+  transform: translateY(15px);
+}
+
+.page-entered .page-header h1 {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.5s ease 0.35s, transform 0.5s ease 0.35s;
+}
+
+/* Content sections cascade in */
+.page-entering .section {
+  opacity: 0;
+  transform: translateY(25px);
+}
+
+.page-entered .section {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.page-entered .section:nth-of-type(1) { transition-delay: 0.45s; }
+.page-entered .section:nth-of-type(2) { transition-delay: 0.55s; }
+.page-entered .section:nth-of-type(3) { transition-delay: 0.65s; }
+
+.page-entering .footer {
+  opacity: 0;
+}
+
+.page-entered .footer {
+  opacity: 1;
+  transition: opacity 0.4s ease 0.7s;
+}
+
 /* ========================================
    INNER PAGES - Navigation
    ======================================== */

@@ -3,63 +3,91 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hanalee - About</title>
+  <title>About | Hana Lee</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Rubik:wght@400&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
-  <link rel="stylesheet" href="aboutstyle.css">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-<nav data-toggled="false" data-transitionable="false">
-  <div id="nav-logo-section" class="nav-section">
-    <a href="index.html">
-      <i class="fa-solid fa-music"></i>
-    </a>
-  </div>
-  <div id="nav-mobile-section">
-    <div id="nav-link-section" class="nav-section">
-      <a href="about.html">ABOUT</a>
-      <a href="index.html">WORK</a>
-    </div>
-    <div id="nav-social-section" class="nav-section">
-      <a href="#">
-        <i class="fa-brands fa-twitter"></i>
-      </a>
-      <a href="https://www.youtube.com/c/Hyperplexed" target="_blank">
-        <i class="fa-brands fa-youtube"></i>
-      </a>
-      <a href="#">
-        <i class="fa-brands fa-codepen"></i>
-      </a>
-    </div>
-    <div id="nav-contact-section" class="nav-section">
-      <a href="#">GET IN TOUCH</a>
-    </div>
-  </div>
-  <button id="nav-toggle-button" type="button" onclick="handleNavToggle()">
-    <span>Menu</span>
-    <i class="fa-solid fa-bars"></i>
-  </button>
-</nav>
+  <nav class="nav">
+    <a href="index.html" class="nav-logo">Hana Lee</a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html" class="active">About</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <button class="nav-toggle" aria-label="Toggle menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </nav>
 
-<main>
-  <article>
-    <div class="article-description-section article-section">
-      <h3>About me</h3>
-      <p>Welcome to my page. Here you can find my work, projects, and more about who I am.</p>
-    </div>
-    <div class="article-image-section article-section"></div>
-    <div class="article-title-section article-section">
-      <p>Hanalee</p>
-    </div>
-    <div class="article-nav-section article-section">
-      <p>2025</p>
-    </div>
-  </article>
-</main>
+  <header class="page-header">
+    <div class="page-header-bg" style="background-image: url('public/images/landscapeprofff.jpg'); background-position: center 25%;"></div>
+    <div class="page-header-overlay"></div>
+    <h1>About</h1>
+  </header>
 
-<script src="index.js"></script>
+  <section class="section fade-in">
+    <div class="two-col">
+      <div class="two-col-image">
+        <img src="public/images/hanapf.jpg" alt="Hana Lee portrait">
+      </div>
+      <div>
+        <p class="section-label">Biography</p>
+        <h2 class="section-title">A Life in Music</h2>
+        <p class="section-text">
+          Hana Lee is a passionate and dedicated violinist whose artistry captivates audiences with its warmth and sincerity. With years of rigorous training and performance experience, she has developed a distinctive voice on the instrument that blends technical mastery with deep musical expression.
+        </p>
+        <br>
+        <p class="section-text">
+          Her performances span solo recitals, chamber music collaborations, and orchestral settings, bringing classical repertoire to life for diverse audiences.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section fade-in">
+    <div class="two-col reverse">
+      <div>
+        <p class="section-label">Education</p>
+        <h2 class="section-title">Training & Credentials</h2>
+        <p class="section-text">
+          Hana holds a degree in music performance, having studied under distinguished mentors who shaped her approach to both performance and pedagogy. Her education at the Wollongong Conservatorium of Music provided a strong foundation in classical tradition while encouraging artistic exploration and growth.
+        </p>
+        <br>
+        <p class="section-text">
+          She continues to refine her craft through masterclasses, festival participation, and collaborative projects with fellow musicians.
+        </p>
+      </div>
+      <div class="two-col-image">
+        <img src="public/images/landscapeks.jpg" alt="Hana Lee with ensemble at Wollongong Conservatorium">
+      </div>
+    </div>
+  </section>
+
+  <section class="section fade-in">
+    <div class="gallery-row">
+      <img src="public/images/landscape1.jpg" alt="Hana Lee taking applause">
+      <img src="public/images/hanastage.jpg" alt="Hana Lee on stage">
+      <img src="public/images/landscapef.jpg" alt="Hana Lee performing">
+    </div>
+  </section>
+
+  <footer class="footer">
+    <ul class="footer-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <p>&copy; 2026 Hana Lee. All rights reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>

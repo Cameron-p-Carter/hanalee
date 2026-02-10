@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact | Hana Lee</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <nav class="nav">
+    <a href="index.html" class="nav-logo">Hana Lee</a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="contact.html" class="active">Contact</a></li>
+    </ul>
+    <button class="nav-toggle" aria-label="Toggle menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </nav>
+
+  <header class="page-header">
+    <div class="page-header-bg" style="background-image: url('public/images/landscapeprof.jpg'); background-position: center 25%;"></div>
+    <div class="page-header-overlay"></div>
+    <h1>Contact</h1>
+  </header>
+
+  <section class="section fade-in">
+    <p class="section-label">Get in Touch</p>
+    <h2 class="section-title">Let's Make Music Together</h2>
+
+    <div class="contact-grid">
+      <div class="contact-info">
+        <h3>Enquiries</h3>
+        <p>
+          Whether you're interested in booking a performance, arranging violin lessons, or have a general enquiry, I'd love to hear from you. Please fill out the form or reach out directly.
+        </p>
+
+        <h3>Email</h3>
+        <p><a href="mailto:hello@hanalee.com">hello@hanalee.com</a></p>
+
+        <h3>Based In</h3>
+        <p>Wollongong &amp; Sydney, NSW, Australia</p>
+      </div>
+
+      <form class="contact-form" onsubmit="return handleSubmit(event)">
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" required>
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+
+        <div class="form-group">
+          <label for="subject">Enquiry Type</label>
+          <select id="subject" name="subject">
+            <option value="performance">Performance Booking</option>
+            <option value="lessons">Violin Lessons</option>
+            <option value="general">General Enquiry</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="5" required></textarea>
+        </div>
+
+        <button type="submit" class="btn">Send Message</button>
+      </form>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <ul class="footer-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <p>&copy; 2026 Hana Lee. All rights reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

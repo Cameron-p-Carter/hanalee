@@ -1,0 +1,196 @@
+  :root {
+    --background-color: rgb(9, 5, 23);
+    --border-color: rgb(255, 255, 255, 0.2);
+    --highlight-color: rgb(184, 133, 235, 0.8);
+  }
+  
+  body {
+    background-color: var(--background-color);
+    display: flex;
+    flex-direction: column;
+    height: 170vh;
+    margin: 0px;
+    overflow: hidden;
+  }
+  
+  * {
+    box-sizing: border-box;
+  }
+  
+  h1, h2, h3 {
+    color:white;
+    margin: 0px;
+  }
+  
+  a, p {
+    color: rgb(255, 255, 255, 0.4);
+    margin: 0px;
+    font-family: 'roboto', sans-serif;
+  }
+
+  #nav-contact-section a {
+  color: var(--highlight-color);
+}
+  
+  a {
+    text-decoration: none;
+  }
+  
+  
+  
+  nav {
+    display: flex;
+    width: 100%;
+    border-bottom: 1px solid var(--border-color);
+  }
+  
+  nav .nav-section {
+    padding: 1rem 1rem;
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    letter-spacing: 0.05rem;
+  }
+  
+  #nav-top-section {
+    display: flex;
+    flex-basis: calc(100% * (1 / 2));
+    border-left: 1px solid var(--border-color);
+    z-index: 2;
+  }
+  
+  
+  
+  #nav-document-section,
+  #nav-contact-section {
+    flex-grow: 1;
+    border-left: 1px solid var(--border-color);
+  }
+  
+  
+  #nav-logo-section {
+    flex-basis: calc(100% / 2);
+    justify-content: flex-start;
+  }
+  
+  #nav-logo-section > a {
+    display: block;
+    width: 5rem;
+    height: 5rem;
+    margin-left: 2rem;
+    background-image: url('images/Last_Prism.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    image-rendering: pixelated;
+  }
+  
+  #nav-link-section {
+    flex-basis: 50%;
+    gap: 6rem; 
+  }
+  
+  #nav-document-section {
+    gap: 3rem;
+  }
+  
+  main {
+    flex-grow: 1;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  main > article {
+    height: 100%;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+  
+  }
+  
+  main > article > .article-section {
+    height: 100%;
+    display: flex;
+  }
+  
+  
+  
+    
+  main > article > .article-title-section,
+  main > article > .article-nav-section {
+    border-top: 1px solid var(--border-color);
+    color:white;
+  }
+  
+  
+  
+  main > article > .article-image-section {
+    background-image: url("images/yes5.png");
+    image-rendering: pixelated;
+    background-position: center;
+    background-size: 100% 100%;
+    object-fit: fill;
+  }
+  
+  main > article > .article-description-section {
+    flex-direction: column;
+    justify-content: center;
+    padding-left:15rem;
+    padding-right:6rem;
+  }
+  
+
+  main > article > .article-description-section h3 {
+    font-size: 6rem;
+    line-height: 6rem;
+    font-family: Impact, monospace;
+    font-weight: 900;
+    transform: scaleX(2); /* Stretches text horizontally */
+    transform-origin: left; /* Scale from the left */
+  }
+  
+  main > article > .article-description-section p,
+main > article > .article-description-section h3 {
+  margin-bottom: 3rem;
+
+}
+
+main > article > .article-description-section p {
+  font-size: 2rem;
+  font-weight: 400;
+  max-width: 75%;
+  color:var(--highlight-color);
+}
+  
+main > article > .article-description-section .icons-container {
+  display: flex; /* Arrange icons horizontally */
+  gap: 1rem; /* Adds space between icons */
+}
+
+main > article > .article-description-section i {
+  font-size: 2rem;
+  color:var(--highlight-color);
+  margin-right: 1rem;
+}
+  
+  main > article > .article-title-section > p {
+    padding-left:15rem;
+    margin:0;
+  }
+  
+  main > article > .article-nav-section {
+    padding-left:45rem;
+    padding-top:1rem;
+  }
+  
+  main > article > .article-title-section > p,
+  main > article > .article-nav-section {
+  padding-top:2rem;
+  }

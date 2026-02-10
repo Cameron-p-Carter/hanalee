@@ -172,7 +172,7 @@ img {
   font-weight: 400;
   padding: clamp(0.25rem, 0.5vw, 1rem) 0;
   text-decoration: none;
-  transition: opacity 400ms ease;
+  transition: opacity 400ms ease, transform 400ms ease;
 }
 
 .menu-item:hover {
@@ -181,14 +181,9 @@ img {
 
 /* ===== Page Transitions ===== */
 
-/* Home exit: items stagger out from clicked item */
-.menu-item {
-  transition: opacity 400ms ease, transform 400ms ease;
-}
-
 .menu-item.slide-out {
   opacity: 0;
-  transform: translateX(-40px);
+  transform: translateY(20px);
 }
 
 #menu-header {
